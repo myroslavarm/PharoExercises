@@ -14,8 +14,9 @@ EAddition class >> left: anInteger right: anInteger2 [
 ]
 
 { #category : #accessing }
-EAddition >> evaluate [
-	^ left evaluate + right evaluate
+EAddition >> evaluateWith: anObject [
+	^ (left evaluateWith: anObject)
+		+ (right evaluateWith: anObject)
 ]
 
 { #category : #accessing }

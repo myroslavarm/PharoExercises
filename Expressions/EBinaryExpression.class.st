@@ -12,7 +12,7 @@ Class {
 }
 
 { #category : #accessing }
-EBinaryExpression >> evaluate [ 
+EBinaryExpression >> evaluateWith: anObject [ 
 
 	^ self subclassResponsibility 
 ]

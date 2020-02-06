@@ -8,7 +8,7 @@ Class {
 }
 
 { #category : #accessing }
-EExpression >> evaluate [ 
+EExpression >> evaluateWith: anObject [ 
 	
 	^ self subclassResponsibility 
 ]
