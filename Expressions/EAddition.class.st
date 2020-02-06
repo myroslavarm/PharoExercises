@@ -3,11 +3,7 @@ I implement addition
 "
 Class {
 	#name : #EAddition,
-	#superclass : #EExpression,
-	#instVars : [
-		'left',
-		'right'
-	],
+	#superclass : #EBinaryExpression,
 	#category : #Expressions
 }
 
@@ -23,23 +19,7 @@ EAddition >> evaluate [
 ]
 
 { #category : #accessing }
-EAddition >> left: aValue [
+EAddition >> operatorString [
 
-	left := aValue
-]
-
-{ #category : #accessing }
-EAddition >> printOn: aStream [
-
-	aStream nextPutAll: '('.
-	left printOn: aStream. 
-	aStream nextPutAll: ' + '.
-	right printOn: aStream.
-	aStream nextPutAll: ')'
-]
-
-{ #category : #accessing }
-EAddition >> right: aValue [
-
-	right := aValue
+	^ ' + '
 ]

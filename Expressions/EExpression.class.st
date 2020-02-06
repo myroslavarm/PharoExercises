@@ -8,6 +8,12 @@ Class {
 }
 
 { #category : #accessing }
+EExpression >> evaluate [ 
+	
+	^ self subclassResponsibility 
+]
+
+{ #category : #accessing }
 EExpression >> negated [
 	^ ENegation new expression: self
 ]

@@ -3,11 +3,7 @@ I implement multiplication
 "
 Class {
 	#name : #EMultiplication,
-	#superclass : #EExpression,
-	#instVars : [
-		'left',
-		'right'
-	],
+	#superclass : #EBinaryExpression,
 	#category : #Expressions
 }
 
@@ -24,23 +20,7 @@ EMultiplication >> evaluate [
 ]
 
 { #category : #accessing }
-EMultiplication >> left: aValue [
+EMultiplication >> operatorString [
 
-	left := aValue
-]
-
-{ #category : #accessing }
-EMultiplication >> printOn: aStream [
-
-	aStream nextPutAll: '('.
-	left printOn: aStream. 
-	aStream nextPutAll: ' * '.
-	right printOn: aStream.
-	aStream nextPutAll: ')'
-]
-
-{ #category : #accessing }
-EMultiplication >> right: aValue [
-
-	right := aValue 
+	^ ' * '
 ]
