@@ -31,5 +31,12 @@ ENegation >> expression: anExpression [
 { #category : #accessing }
 ENegation >> negated [
 
-	^ self class new expression: self
+	^ expression
+]
+
+{ #category : #accessing }
+ENegation >> printOn: aStream [
+
+	aStream nextPutAll: '-'.
+	expression printOn: aStream
 ]

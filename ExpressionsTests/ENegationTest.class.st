@@ -21,3 +21,17 @@ ENegationTest >> testNegationNegated [
 
 	self assert: (EConstant new value: 6) negated negated evaluate equals: 6
 ]
+
+{ #category : #tests }
+ENegationTest >> testNegationStructureIsCorrect [
+	| exp |
+	exp := EConstant value: 11.
+	self assert: exp negated class equals: ENegation.
+	self assert: exp negated negated equals: exp
+]
+
+{ #category : #tests }
+ENegationTest >> testPrinting [
+
+	self assert: (EConstant value: 5) negated printString equals: '-5'
+]

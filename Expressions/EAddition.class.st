@@ -29,6 +29,16 @@ EAddition >> left: aValue [
 ]
 
 { #category : #accessing }
+EAddition >> printOn: aStream [
+
+	aStream nextPutAll: '('.
+	left printOn: aStream. 
+	aStream nextPutAll: ' + '.
+	right printOn: aStream.
+	aStream nextPutAll: ')'
+]
+
+{ #category : #accessing }
 EAddition >> right: aValue [
 
 	right := aValue

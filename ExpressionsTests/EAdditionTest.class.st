@@ -35,3 +35,10 @@ EAdditionTest >> testNegated [
 	ep2 := EConstant new value: 3.
 	self assert: (EAddition new right: ep1; left: ep2) negated evaluate equals: -8
 ]
+
+{ #category : #tests }
+EAdditionTest >> testPrinting [
+
+	self assert: (EAddition new left: 3; right: 5) printString equals: '(3 + 5)'.
+	self assert: (EAddition new left: 3; right: 5) negated printString equals: '-(3 + 5)'
+]
