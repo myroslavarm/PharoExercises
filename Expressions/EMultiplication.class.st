@@ -3,13 +3,19 @@ I implement multiplication
 "
 Class {
 	#name : #EMultiplication,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'left',
 		'right'
 	],
 	#category : #Expressions
 }
+
+{ #category : #'instance creation' }
+EMultiplication class >> left: anExp right: anExp2 [
+
+	^ self new left: anExp ; right: anExp2
+]
 
 { #category : #accessing }
 EMultiplication >> evaluate [
@@ -21,11 +27,6 @@ EMultiplication >> evaluate [
 EMultiplication >> left: aValue [
 
 	left := aValue
-]
-
-{ #category : #accessing }
-EMultiplication >> negated [
-	^ ENegation new expression: self
 ]
 
 { #category : #accessing }

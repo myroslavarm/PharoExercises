@@ -3,12 +3,18 @@ I implement negation
 "
 Class {
 	#name : #ENegation,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'expression'
 	],
 	#category : #Expressions
 }
+
+{ #category : #accessing }
+ENegation class >> expression: anExpression [
+
+	^ self new expression: anExpression 
+]
 
 { #category : #accessing }
 ENegation >> evaluate [

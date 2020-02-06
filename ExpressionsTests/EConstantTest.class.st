@@ -1,8 +1,14 @@
 Class {
 	#name : #EConstantTest,
 	#superclass : #TestCase,
-	#category : #Expressions
+	#category : #ExpressionsTests
 }
+
+{ #category : #tests }
+EConstantTest >> testCreationWithClassCreationMessage [
+
+	self assert: (EConstant value: 5) evaluate equals: 5
+]
 
 { #category : #tests }
 EConstantTest >> testEvaluate [

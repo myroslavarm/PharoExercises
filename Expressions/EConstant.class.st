@@ -3,7 +3,7 @@ I represent a value
 "
 Class {
 	#name : #EConstant,
-	#superclass : #Object,
+	#superclass : #EExpression,
 	#instVars : [
 		'value'
 	],
@@ -11,15 +11,15 @@ Class {
 }
 
 { #category : #accessing }
-EConstant >> evaluate [
+EConstant class >> value: anInteger [
 
-	^ value
+	^ self new value: anInteger
 ]
 
 { #category : #accessing }
-EConstant >> negated [
+EConstant >> evaluate [
 
-	^ ENegation new expression: self
+	^ value
 ]
 
 { #category : #accessing }
