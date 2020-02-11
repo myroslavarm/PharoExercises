@@ -11,18 +11,9 @@ Class {
 }
 
 { #category : #arithmetic }
-DieHandle >> + aDieOrADieHandle [
-	^ (aDieOrADieHandle class = self class)
-			ifTrue: [ | handle |
-					handle := self class new.
-					self dice do: [ :each | handle addDie: each ].
-					aDieOrADieHandle dice do: [ :each | handle addDie: each ].
-					handle ]
-			ifFalse: [ | handle |
-					handle := self class new.
-					self dice do: [ :each | handle addDie: each ].
-					handle addDie: aDieOrADieHandle.
-					handle ]
+DieHandle >> + aDicable [
+
+	^ aDicable sumWithHandle: self
 ]
 
 { #category : #initialization }
@@ -54,4 +45,22 @@ DieHandle >> roll [
 	diceRollSum := 0.
 	dice do: [ :each | diceRollSum := diceRollSum + each roll ].
 	^ diceRollSum
+]
+
+{ #category : #arithmetic }
+DieHandle >> sumWithDie: aDie [
+	| handle |
+	handle := self class new.
+	self dice do: [ :each | handle addDie: each ].
+	handle addDie: aDie.
+	^ handle
+]
+
+{ #category : #arithmetic }
+DieHandle >> sumWithHandle: aDieHandle [
+	| handle |
+	handle := self class new.
+	self dice do: [ :each | handle addDie: each ].
+	aDieHandle dice do: [ :each | handle addDie: each ].
+	^ handle
 ]

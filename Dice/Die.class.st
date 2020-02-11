@@ -21,10 +21,9 @@ Die class >> withFaces: aNumber [
 ]
 
 { #category : #initialization }
-Die >> + aDieOrADieHandle [
-	| selfAsDieHandle |
-	selfAsDieHandle := DieHandle new addDie: self.
-	^ selfAsDieHandle + aDieOrADieHandle 
+Die >> + aDicable [
+
+	^ aDicable sumWithDie: self
 ]
 
 { #category : #initialization }
@@ -57,4 +56,19 @@ Die >> printOn: aStream [
 Die >> roll [
 
 	^ faces atRandom 
+]
+
+{ #category : #initialization }
+Die >> sumWithDie: aDie [
+
+	^ DieHandle new addDie: self; addDie: aDie; yourself
+]
+
+{ #category : #initialization }
+Die >> sumWithHandle: aDieHandle [
+	| handle |
+	handle := DieHandle new.
+	aDieHandle dice do: [ :each | handle addDie: each ].
+	handle addDie: self.
+	^ handle
 ]
