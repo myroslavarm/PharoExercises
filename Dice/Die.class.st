@@ -21,6 +21,13 @@ Die class >> withFaces: aNumber [
 ]
 
 { #category : #initialization }
+Die >> + aDieOrADieHandle [
+	| selfAsDieHandle |
+	selfAsDieHandle := DieHandle new addDie: self.
+	^ selfAsDieHandle + aDieOrADieHandle 
+]
+
+{ #category : #initialization }
 Die >> faces [
 
 	^ faces
